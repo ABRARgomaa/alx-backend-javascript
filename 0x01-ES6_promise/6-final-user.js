@@ -7,11 +7,15 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
   return Promise
     .all([sign, upload])
     .then((result) => {
-      const signresult = result[0];
-      const uploadresult = result[1];
-      const status = 'pending';
-      const fname = signresult.firstName;
-      const lname = signresult.lastName;
-      return [status, fname, lname, uploadresult];
+      result.map((result) => ({
+        status: 'fulfilled',
+        value: result,
+      }));
+    })
+    .catch((error) => {
+      error.map((error) => ({
+        status: 'rejected',
+        value: error,
+      }));
     });
 }
