@@ -15,6 +15,6 @@ describe("calculateNumber", function() {
     })
 
     it("sould return Error when dividing by 0", function() {
-        assert.throws(() => calculateNumber('DIVIDE', 1.4, 0), /Error/)
+        assert.strictEqual(calculateNumber('DIVIDE', 1.4, 0), 'Error')
     })
 });
