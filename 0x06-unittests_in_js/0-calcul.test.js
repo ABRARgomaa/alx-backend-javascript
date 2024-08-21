@@ -1,9 +1,12 @@
 var calculateNumber = require("./0-calcul")
 const assert = require('assert');
 
-describe("test suit", function() {
-    it("test the calculateNumber function", function() {
-        const result = calculateNumber(2, 3);
-        assert.strictEqual(result, 5);
+describe("calculateNumber", function() {
+    it("should return 4 when rounding 1 and 3", function() {
+        assert.strictEqual(calculateNumber(1, 3), 4);
+    });
+
+    it("should return 5 when rounding 1.1 and 3.5", function() {
+        assert.strictEqual(calculateNumber(1.1, 3.5), 5);
     });
 });
