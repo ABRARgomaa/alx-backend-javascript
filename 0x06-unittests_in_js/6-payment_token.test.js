@@ -7,6 +7,6 @@ describe("test suit for promise", function() {
         getPaymentTokenFromAPI(true).then((response) => {
             expect(response).to.deep.equal({ data: 'Successful response from the API' });
             done();
-        }).catch(done);
+        })
     });
 });
